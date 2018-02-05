@@ -8,7 +8,7 @@ const MainDisplay = (props) => {
   }
 
   return (
-    <div>
+    <div style={{marginTop: '50px'}}>
       {output()}
     </div>
   )

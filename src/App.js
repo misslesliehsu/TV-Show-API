@@ -3,13 +3,11 @@ import logo from './logo.svg';
 import './App.css';
 import SearchBar from './SearchBar'
 import ShowList from './ShowList'
-import MainDisplay from './MainDisplay'
 
 class App extends Component {
 
   state = {
     searchTerm:'',
-    displayShow:'',
     showResults: []
   }
 
@@ -27,20 +25,15 @@ class App extends Component {
     })
   }
 
-  setDisplay = (show) => {
-    this.setState({
-      displayShow: show
-    })
-  }
+
 
   render() {
     console.log(this.state.showResults)
     return (
-      <div className="App">
-          <img src={logo} className="App-logo" alt="logo" />
+      <div className="App" style={{display: 'grid', gridTemplateRows: "10% 10% auto"}}>
+        <img src={logo} className="App-logo" alt="logo" style={{margin: '0 auto'}} />
         <SearchBar searchTerm={this.state.searchTerm} handleSearch={this.handleSearch} handleSubmit={this.handleSubmit}/>
-        <ShowList showResults={this.state.showResults} setDisplay={this.setDisplay}/>
-        <MainDisplay displayShow={this.state.displayShow} />
+        <ShowList showResults={this.state.showResults}/>
       </div>
     );
   }

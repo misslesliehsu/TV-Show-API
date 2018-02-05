@@ -10,7 +10,7 @@ class App extends Component {
   state = {
     searchTerm:'',
     displayShow:'',
-    showResults: ''
+    showResults: []
   }
 
   handleSubmit = (e) => {
@@ -34,6 +34,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.showResults)
     return (
       <div className="App">
           <img src={logo} className="App-logo" alt="logo" />
